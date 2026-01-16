@@ -12,54 +12,59 @@ annotate GalacticService.Spacefarers with @(
         Visualizations : ['@UI.LineItem'],
     },
 
-    // Filters
     UI.SelectionFields : [
         originPlanet,
         department_ID,
         position_ID
     ],
 
-    // Table columns
     UI.LineItem : [
-        { Value : ID },
-        { Value : spacesuitColor },
-        { Value : stardustCollection },
+        {
+            Value : spacesuitColor,
+            Label : 'Spacesuit Color'
+        },
+
+        {
+            Value : stardustCollection,
+            Label : 'Stardust Status'
+        },
+
+        { Value : originPlanet, Label : 'Origin Planet', @Common.Text : originPlanet.name },
+        { Value : department_ID, Label : 'Department' },
+        { Value : position_ID, Label : 'Position' }
     ]
 );
 
 annotate GalacticService.Spacefarers with {
     department @(
+        Common.Label : 'Department',
+
+        // Display the title instead of the ID
+        Common.Text : department.name,
+        Common.TextArrangement : #TextOnly,
+
         Common.ValueList : {
             $Type : 'Common.ValueListType',
             CollectionPath : 'Departments',
             Parameters : [
-                {
-                    $Type : 'Common.ValueListParameterInOut',
-                    LocalDataProperty : department_ID,
-                    ValueListProperty : 'ID',
-                },
-                {
-                    $Type : 'Common.ValueListParameterDisplayOnly',
-                    ValueListProperty : 'name',
-                },
+                { $Type : 'Common.ValueListParameterInOut', LocalDataProperty : department_ID, ValueListProperty : 'ID' },
+                { $Type : 'Common.ValueListParameterDisplayOnly', ValueListProperty : 'name' },
             ],
         }
     );
-
     position @(
+        Common.Label : 'Position',
+
+        // Display the title instead of the ID
+        Common.Text : position.title,
+        Common.TextArrangement : #TextOnly,
+
         Common.ValueList : {
             $Type : 'Common.ValueListType',
             CollectionPath : 'Positions',
             Parameters : [
-                {
-                    $Type : 'Common.ValueListParameterInOut',
-                    LocalDataProperty : position_ID,
-                    ValueListProperty : 'ID',
-                },
-                {
-                    $Type : 'Common.ValueListParameterDisplayOnly',
-                    ValueListProperty : 'title',
-                },
+                { $Type : 'Common.ValueListParameterInOut', LocalDataProperty : position_ID, ValueListProperty : 'ID' },
+                { $Type : 'Common.ValueListParameterDisplayOnly', ValueListProperty : 'title' },
             ],
         }
     );

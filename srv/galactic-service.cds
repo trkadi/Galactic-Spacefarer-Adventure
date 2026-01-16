@@ -12,9 +12,15 @@ service GalacticService {
 
     @readonly
     @cds.autoexpose
+    @restrict: [
+        { grant: 'READ', to: ['SpacefarerManager', 'Spacefarer'] }
+    ]
     entity Departments as projection on galactic.Departments;
 
     @readonly
     @cds.autoexpose
+    @restrict: [
+        { grant: 'READ', to: ['SpacefarerManager', 'Spacefarer'] }
+    ]
     entity Positions as projection on galactic.Positions;
 }

@@ -5,9 +5,16 @@ using { managed, cuid } from '@sap/cds/common';
 entity Spacefarers : managed, cuid {
     stardustCollection      : Integer default 0;
     wormholeNavigationSkill : Integer not null;
+
+    @assert.range
     originPlanet            : Planet not null;
+
     spacesuitColor          : String default 'Standard White';
+
+    @assert.target
     department              : Association to Departments not null;
+
+    @assert.target
     position                : Association to Positions not null;
 }
 

@@ -9,7 +9,7 @@
             "Spacefarer"
           ],
           "attr": {
-            "planet": "Planet_X"
+            "planet": "Planet X"
           }
         },
         "bob": {
@@ -18,7 +18,7 @@
             "Spacefarer"
           ],
           "attr": {
-            "planet": "Planet_Y"
+            "planet": "Planet Y"
           }
         },
         "carol": {

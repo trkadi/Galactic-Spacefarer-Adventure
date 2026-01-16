@@ -9,7 +9,10 @@ service GalacticService {
         { grant: '*', to: 'SpacefarerManager' },
         { grant: 'READ', to: 'Spacefarer', where: 'originPlanet = $user.planet' }
     ]
-    entity Spacefarers as projection on galactic.Spacefarers;
+    entity Spacefarers as projection on galactic.Spacefarers {
+        *,
+        spacesuitColor || ' - ' || department.name || ' - ' || position.title as compositeObjectTitle : String
+    };
 
     @readonly
     @cds.autoexpose

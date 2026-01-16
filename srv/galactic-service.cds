@@ -4,10 +4,11 @@ using { galactic } from '../db/galactic-schema';
 @requires: 'authenticated-user'
 service GalacticService {
 
+    @restrict: [
+        { grant: '*', to: 'SpacefarerManager' },
+        { grant: 'READ', to: 'Spacefarer', where: 'originPlanet = $user.planet' }
+    ]
     entity Spacefarers as projection on galactic.Spacefarers;
-    // restrict [
-    //     { grant: '*', where: 'originPlanet = $user.planet' }
-    // ];
 
     @readonly
     @cds.autoexpose

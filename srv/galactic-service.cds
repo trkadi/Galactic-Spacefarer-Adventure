@@ -4,6 +4,7 @@ using { galactic } from '../db/galactic-schema';
 @requires: 'authenticated-user'
 service GalacticService {
 
+    @odata.draft.enabled
     @restrict: [
         { grant: '*', to: 'SpacefarerManager' },
         { grant: 'READ', to: 'Spacefarer', where: 'originPlanet = $user.planet' }

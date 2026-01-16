@@ -8,60 +8,93 @@ using GalacticService from '../../srv/galactic-service';
  */
 
 annotate GalacticService.Spacefarers with @(
-    // HEADER
     UI.HeaderInfo : {
         TypeName       : 'Spacefarer',
         TypeNamePlural : 'Spacefarers',
-        Title          : { Value : originPlanet },
-        Description    : { Value : spacesuitColor }
+        Title          : { Value : compositeObjectTitle },
+        Description    : { Value : ID }
     },
 
-    // HEADER FACETS
-    UI.HeaderFacets : [
-        {
-            $Type : 'UI.ReferenceFacet',
-            Target : '@UI.DataPoint#Stardust',
-        }
-    ],
-
-    UI.DataPoint #Stardust : {
+    UI.DataPoint #StardustProgress : {
         Value : stardustCollection,
-        Title : 'Current Stardust',
+        TargetValue : 5000, // Max stardust
+        Visualization : #Progress,
+        Title : 'Stardust Collection',
     },
 
-    // SECTIONS
+    UI.DataPoint #SkillProgress : {
+        Value : wormholeNavigationSkill,
+        TargetValue : 10, // Max skill
+        Visualization : #Progress,
+        Title : 'Navigation Skill',
+    },
+
+    UI.DataPoint #PositionRank : {
+        Value : position.rank,
+        TargetValue : 5,
+        Visualization : #Rating,
+        Title : 'Rank Level'
+    },
+
+    // --- OLDAL FELÉPÍTÉSE ---
     UI.Facets : [
         {
             $Type  : 'UI.CollectionFacet',
-            ID     : 'GeneralInformation',
-            Label  : 'General Information',
+            ID     : 'GeneralInfoSection',
+            Label  : 'Spacefarer Details',
             Facets : [
                 {
-                    $Type  : 'UI.ReferenceFacet',
-                    Label  : 'Spacefarer Profile',
-                    Target : '@UI.FieldGroup#Profile',
-                }
+                    $Type : 'UI.ReferenceFacet',
+                    Label : 'Basic Vitals',
+                    Target : '@UI.FieldGroup#Vitals',
+                },
+                {
+                    $Type : 'UI.ReferenceFacet',
+                    Label : 'Rank & Assignment',
+                    Target : '@UI.FieldGroup#Deployment',
+                },
+                {
+                    $Type : 'UI.ReferenceFacet',
+                    Label : 'Performance Indicators',
+                    Target : '@UI.FieldGroup#Stats', // Új szekció a progress baroknak
+                },
             ],
-        },
-        {
-            $Type  : 'UI.ReferenceFacet',
-            Label  : 'Military & Service Info',
-            Target : '@UI.FieldGroup#Service',
         }
     ],
 
-    UI.FieldGroup #Profile : {
+    // --- MEZŐCSOPORTOK ---
+    UI.FieldGroup #Vitals : {
         Data : [
             { Value : originPlanet },
-            { Value : spacesuitColor },
+            { Value : spacesuitColor }
         ]
     },
 
-    UI.FieldGroup #Service : {
+    UI.FieldGroup #Deployment : {
         Data : [
-            { Value : wormholeNavigationSkill },
             { Value : department_ID },
             { Value : position_ID },
+            {
+                $Type : 'UI.DataFieldForAnnotation',
+                Target : '@UI.DataPoint#PositionRank',
+                Label : 'Seniority Rank'
+            }
+        ]
+    },
+
+    // Ez a trükk: a FieldGroup-ba DataPoint-okat teszünk
+    UI.FieldGroup #Stats : {
+        Data : [
+            {
+                $Type : 'UI.DataFieldForAnnotation',
+                Target : '@UI.DataPoint#StardustProgress',
+                Label : 'Stardust Collection'
+            },
+            {
+                $Type : 'UI.DataFieldForAnnotation',
+                Target : '@UI.DataPoint#SkillProgress',
+                Label : 'Wormhole Navigation Mastery'
+            }
         ]
     }
 );

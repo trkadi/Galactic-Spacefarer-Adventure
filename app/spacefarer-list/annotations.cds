@@ -37,8 +37,6 @@ annotate GalacticService.Spacefarers with @(
 
 annotate GalacticService.Spacefarers with {
     department @(
-        Common.Label : 'Department',
-
         // Change to dropdown
         Common.ValueListWithFixedValues : true,
 
@@ -56,7 +54,6 @@ annotate GalacticService.Spacefarers with {
         }
     );
     position @(
-        Common.Label : 'Position',
         Common.ValueListWithFixedValues : true,
         Common.Text : position.title,
         Common.TextArrangement : #TextOnly,
@@ -71,7 +68,6 @@ annotate GalacticService.Spacefarers with {
         }
     );
     originPlanet @(
-        Common.Label : 'Origin Planet',
         Common.ValueListWithFixedValues : true,
         Common.ValueList : {
             $Type : 'Common.ValueListType',

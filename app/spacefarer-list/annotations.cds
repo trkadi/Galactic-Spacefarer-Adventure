@@ -86,3 +86,12 @@ annotate GalacticService.Spacefarers with {
         }
     );
 }
+
+// Force displaying only text for filters
+annotate GalacticService.Departments with {
+    ID @Common.Text : name @Common.TextArrangement : #TextOnly;
+}
+
+annotate GalacticService.Positions with {
+    ID @Common.Text : title @Common.TextArrangement : #TextOnly;
+}

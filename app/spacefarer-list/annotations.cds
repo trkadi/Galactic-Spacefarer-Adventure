@@ -70,4 +70,19 @@ annotate GalacticService.Spacefarers with {
             ],
         }
     );
+    originPlanet @(
+        Common.Label : 'Origin Planet',
+        Common.ValueListWithFixedValues : true,
+        Common.ValueList : {
+            $Type : 'Common.ValueListType',
+            CollectionPath : 'Spacefarers',
+            Parameters : [
+                {
+                    $Type : 'Common.ValueListParameterInOut',
+                    LocalDataProperty : originPlanet,
+                    ValueListProperty : 'originPlanet'
+                }
+            ]
+        }
+    );
 }

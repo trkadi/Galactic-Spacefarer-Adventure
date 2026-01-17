@@ -7,15 +7,15 @@ entity Spacefarers : managed, cuid {
     wormholeNavigationSkill : Integer not null;
 
     @assert.range
-    originPlanet            : Planet not null;
+    originPlanet            : Planet not null @title : 'Origin Planet';
 
-    spacesuitColor          : String default 'Standard White';
-
-    @assert.target
-    department              : Association to Departments not null;
+    spacesuitColor          : String default 'Standard White' @title : 'Spacesuit Color';
 
     @assert.target
-    position                : Association to Positions not null;
+    department              : Association to Departments not null @title : 'Department';
+
+    @assert.target
+    position                : Association to Positions not null @title : 'Position';
 }
 
 entity Departments : managed, cuid {

@@ -1,0 +1,404 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: SAP Spacefarers
+meta:
+  id: wrk_88ea57f9efa142f7bf9608b76ba8bf72
+  created: 1768560651490
+  modified: 1768560651490
+  description: ""
+collection:
+  - url: "{{ _.URL }}{{ _.API_PATH }}/Spacefarers"
+    name: Spacefarers (unauthorized)
+    meta:
+      id: req_e1d61fb5a5ed4937a6a7d62aed0a177e
+      created: 1768560658724
+      modified: 1768571879557
+      isPrivate: false
+      description: ""
+      sortKey: -1768560658724
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/12.3.0
+        description: ""
+        disabled: false
+    authentication:
+      type: basic
+      useISO88591: false
+      username: ""
+      password: ""
+      disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.URL }}{{ _.API_PATH }}/Positions"
+    name: Positions (unauthorized)
+    meta:
+      id: req_8462091c420a428183d04e0860572857
+      created: 1768567760336
+      modified: 1768567791584
+      isPrivate: false
+      description: ""
+      sortKey: -1768053042136
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/12.3.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.URL }}{{ _.API_PATH }}/Departments"
+    name: Departments (unauthorized)
+    meta:
+      id: req_7fa3ff67dd944997b5eb8f37b37e8325
+      created: 1768567764054
+      modified: 1768568571676
+      isPrivate: false
+      description: ""
+      sortKey: -1768306850430
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/12.3.0
+        description: ""
+        disabled: false
+    authentication:
+      type: none
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.URL }}{{ _.API_PATH }}/Spacefarers"
+    name: Spacefarers (alice)
+    meta:
+      id: req_74a32f7f32434055989f5657ecce2844
+      created: 1768568595006
+      modified: 1768568648777
+      isPrivate: false
+      description: ""
+      sortKey: -1768053042036
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/12.3.0
+        description: ""
+        disabled: false
+    authentication:
+      type: basic
+      useISO88591: false
+      username: alice
+      password: alices_password
+      disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.URL }}{{ _.API_PATH }}/Spacefarers"
+    name: Spacefarers (bob)
+    meta:
+      id: req_858edf829abf4bcca8af7764e69e92a6
+      created: 1768568661205
+      modified: 1768571972079
+      isPrivate: false
+      description: ""
+      sortKey: -1767291617204
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/12.3.0
+        description: ""
+        disabled: false
+    authentication:
+      type: basic
+      useISO88591: false
+      username: bob
+      password: bobs_password
+      disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.URL }}{{ _.API_PATH }}/Spacefarers"
+    name: Spacefarers (alice)
+    meta:
+      id: req_9c7f8851a3264945b22e0974de385e30
+      created: 1768569185546
+      modified: 1768570447862
+      isPrivate: false
+      description: ""
+      sortKey: -1767672329620
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"wormholeNavigationSkill": 2,
+        	"originPlanet": "Planet_X",
+        	"department_ID": "d2",
+        	"position_ID": "p1"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.3.0
+        description: ""
+        disabled: false
+    authentication:
+      type: basic
+      useISO88591: false
+      username: alice
+      password: alices_password
+      disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.URL }}{{ _.API_PATH }}/Spacefarers"
+    name: Spacefarers (carol)
+    meta:
+      id: req_29e5435b678140258535d0f74fe9b9ca
+      created: 1768571919722
+      modified: 1768571934668
+      isPrivate: false
+      description: ""
+      sortKey: -1767291617104
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/12.3.0
+        description: ""
+        disabled: false
+    authentication:
+      type: basic
+      useISO88591: false
+      username: carol
+      password: carols_password
+      disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.URL }}{{ _.API_PATH }}/Spacefarers"
+    name: Spacefarers (bob)
+    meta:
+      id: req_693ae96d976846c48b23f178bf4c308d
+      created: 1768571958504
+      modified: 1768571980454
+      isPrivate: false
+      description: ""
+      sortKey: -1767291617154
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"wormholeNavigationSkill": 2,
+        	"originPlanet": "Planet_X",
+        	"department_ID": "d2",
+        	"position_ID": "p1"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.3.0
+        description: ""
+        disabled: false
+    authentication:
+      type: basic
+      useISO88591: false
+      username: bob
+      password: bobs_password
+      disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.URL }}{{ _.API_PATH }}/Spacefarers"
+    name: Spacefarers (carol)
+    meta:
+      id: req_bb4c29ed653a46a9bb092e1503d5c892
+      created: 1768571995381
+      modified: 1768579726040
+      isPrivate: false
+      description: ""
+      sortKey: -1767291617004
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"wormholeNavigationSkill": 2,
+        	"originPlanet": "Planet X",
+        	"department_ID": "2b03d64b-1473-41c3-8374-14b3086872a1",
+        	"position_ID": "27d6d1d4-28a5-4200-a23d-24953716075e"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.3.0
+        description: ""
+        disabled: false
+    authentication:
+      type: basic
+      useISO88591: false
+      username: carol
+      password: carols_password
+      disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.URL }}{{ _.API_PATH }}/Departments"
+    name: Departments (carol)
+    meta:
+      id: req_4cb43624868a4a8599afa565d086792f
+      created: 1768579173850
+      modified: 1768579214871
+      isPrivate: false
+      description: ""
+      sortKey: -1766910904688
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/12.3.0
+        description: ""
+        disabled: false
+    authentication:
+      type: basic
+      useISO88591: false
+      username: carol
+      password: carols_password
+      disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.URL }}{{ _.API_PATH }}/Positions"
+    name: Positions (carol)
+    meta:
+      id: req_b999d63c835c4055a2ac45af2f5545a7
+      created: 1768579194817
+      modified: 1768579219285
+      isPrivate: false
+      description: ""
+      sortKey: -1766720548530
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/12.3.0
+        description: ""
+        disabled: false
+    authentication:
+      type: basic
+      useISO88591: false
+      username: carol
+      password: carols_password
+      disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.URL }}{{ _.API_PATH }}/Spacefarers?$filter=IsActiveEntity eq false"
+    name: Spacefarers (carol) - drafts
+    meta:
+      id: req_348df8b4fb814d2cb1d38e36878b5658
+      created: 1768590190072
+      modified: 1768590623957
+      isPrivate: false
+      description: ""
+      sortKey: -1767291617054
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/12.3.0
+        description: ""
+        disabled: false
+    authentication:
+      type: basic
+      useISO88591: false
+      username: carol
+      password: carols_password
+      disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_47ecee3f86d29fb4e1bfdb59508b1a3638ad4c51
+    created: 1768560651494
+    modified: 1768560651494
+environments:
+  name: Base Environment
+  meta:
+    id: env_47ecee3f86d29fb4e1bfdb59508b1a3638ad4c51
+    created: 1768560651492
+    modified: 1768560651492
+    isPrivate: false
+  subEnvironments:
+    - name: SAP Spacefarers
+      meta:
+        id: env_a29799b81340469fb77ed5edd42e6bbc
+        created: 1768560809600
+        modified: 1768567714193
+        isPrivate: false
+        sortKey: 1768560809600
+      data:
+        URL: http://localhost:4004
+        API_PATH: /odata/v4/service/galactic

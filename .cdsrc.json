@@ -1,0 +1,33 @@
+{
+  "requires": {
+    "auth": {
+      "kind": "mocked",
+      "users": {
+        "alice": {
+          "password": "alices_password",
+          "roles": [
+            "Spacefarer"
+          ],
+          "attr": {
+            "planet": "Planet X"
+          }
+        },
+        "bob": {
+          "password": "bobs_password",
+          "roles": [
+            "Spacefarer"
+          ],
+          "attr": {
+            "planet": "Planet Y"
+          }
+        },
+        "carol": {
+          "password": "carols_password",
+          "roles": [
+            "SpacefarerManager"
+          ]
+        }
+      }
+    }
+  }
+}

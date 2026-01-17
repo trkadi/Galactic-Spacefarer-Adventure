@@ -39,6 +39,9 @@ annotate GalacticService.Spacefarers with {
     department @(
         Common.Label : 'Department',
 
+        // Change to dropdown
+        Common.ValueListWithFixedValues : true,
+
         // Display the title instead of the ID
         Common.Text : department.name,
         Common.TextArrangement : #TextOnly,
@@ -54,8 +57,7 @@ annotate GalacticService.Spacefarers with {
     );
     position @(
         Common.Label : 'Position',
-
-        // Display the title instead of the ID
+        Common.ValueListWithFixedValues : true,
         Common.Text : position.title,
         Common.TextArrangement : #TextOnly,
 

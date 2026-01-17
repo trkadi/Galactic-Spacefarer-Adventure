@@ -36,7 +36,7 @@ annotate GalacticService.Spacefarers with @(
         Title : 'Rank Level'
     },
 
-    // --- OLDAL FELÉPÍTÉSE ---
+    // Page layout
     UI.Facets : [
         {
             $Type  : 'UI.CollectionFacet',
@@ -56,13 +56,12 @@ annotate GalacticService.Spacefarers with @(
                 {
                     $Type : 'UI.ReferenceFacet',
                     Label : 'Performance Indicators',
-                    Target : '@UI.FieldGroup#Stats', // Új szekció a progress baroknak
+                    Target : '@UI.FieldGroup#Stats',
                 },
             ],
         }
     ],
 
-    // --- MEZŐCSOPORTOK ---
     UI.FieldGroup #Vitals : {
         Data : [
             { Value : originPlanet },
@@ -82,7 +81,6 @@ annotate GalacticService.Spacefarers with @(
         ]
     },
 
-    // Ez a trükk: a FieldGroup-ba DataPoint-okat teszünk
     UI.FieldGroup #Stats : {
         Data : [
             {

@@ -45,7 +45,7 @@ annotate GalacticService.Spacefarers with @(
             Facets : [
                 {
                     $Type : 'UI.ReferenceFacet',
-                    Label : 'Basic Vitals',
+                    Label : 'Personal Information',
                     Target : '@UI.FieldGroup#Vitals',
                 },
                 {
